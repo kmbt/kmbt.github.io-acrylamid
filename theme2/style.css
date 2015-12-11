@@ -17,3 +17,8 @@ article > header {
 		font-size: 10pt;
 		color: #666;
 	}
+
+	article p.tags {
+		margin: 1em 0;
+		font-size: 10pt;
+	}
