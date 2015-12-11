@@ -1,0 +1,55 @@
+---
+title: htdebug, a script for tracing HTTP redirects
+date: 2015-12-11
+tags: [htdebug, python, http redirects, lxml]
+filters: [rst]
+---
+
+Recently, I have written a simple Python script that helps trace HTTP redirects
+along with information on rel=canonical links. I called it htdebug.
+
+Here it is:
+
+.. code-block:: raw
+
+    #!/usr/bin/env python
+
+    import urllib
+    import urllib2
+    import sys
+    import requests
+
+    import lxml
+    from lxml import etree
+    from cStringIO import StringIO
+
+    def get_canonical(html_content):
+        parser = etree.HTMLParser()
+        tree = etree.parse(StringIO(html_content), parser)
+        canonical_hrefs = tree.xpath("/html/head/link[@rel='canonical']/@href")
+        return canonical_hrefs
+
+    if __name__ == "__main__":
+        url = sys.argv[1]
+        print "Probing {} for redirect path.".format(url)
+        response = requests.get(url)
+        for resp in response.history+[response]:
+            print
+            print "[{}] {}".format(resp.status_code, resp.url)
+            print "canonical link: {}".format(get_canonical(resp.content))
+
+After placing it in a executable file named htdebug in your $PATH, you can
+use it like so:
+
+.. code-block:: raw
+	
+	$ htdebug http://yahoo.com
+	Probing http://yahoo.com for redirect path.
+
+	[301] http://yahoo.com/
+	canonical link: []
+
+	[200] https://www.yahoo.com/
+	canonical link: ['https://www.yahoo.com/']
+
+HTTP status codes are shown in square brackets.

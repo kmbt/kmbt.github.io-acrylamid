@@ -1,0 +1,19 @@
+body {
+	margin-top: 60px;
+	background-color: #fafafa;
+	font-size: 12pt;
+	font-family: 'Open Sans', sans-serif;
+}
+
+article > header {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 2em;
+}
+	article > header h1 {
+		display: inline-block;
+	}
+	article > header > time {
+		display: inline-block;
+		font-size: 10pt;
+		color: #666;
+	}

@@ -1,0 +1,10 @@
+---
+title: Hello World!
+date: 2015-11-21
+---
+
+This is my first post on this website. It is also the first time I am using the [pelican](http://blog.getpelican.com) static site generation engine. It is quite surprising for me to find out how the static site generation has recently gained much popularity - as I understand, mainly due to the increasing availability of high performance content delivery networks, and also due to concerns about the security of dynamic websites. 
+
+What I am going to do with this website is to try to share some of my little discoveries and solutions to some common problems in the areas of my personal and professional interest. I hope that the information will be useful to visitors coming here via web search engines, seeking solutions to problems similar to mine and also to people that might want to know what some of my interests are.
+
+See you in the next posts!

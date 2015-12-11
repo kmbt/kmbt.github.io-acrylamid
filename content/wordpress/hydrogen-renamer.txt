@@ -1,0 +1,15 @@
+---
+title: Hydrogen Renamer
+date: 2015-11-22
+tags: [gantry, wordpress, php]
+---
+
+TL;DR: This [script](https://github.com/kmbt/hydrogen-renamer) will help you rename the Gantry 5 Hydrogen theme as a starting point for further customizations.
+
+Recently, I've been trying out the [Gantry 5](http://gantry.org) - a theme framework for Wordpress. One way to get started with theme development using Gantry 5 is to take the default theme, called Hydrogen, rename it and customize it to one's needs.
+
+The whole renaming process is described [here](http://docs.gantry.org/gantry5/theme-development/change-theme-name). It takes few steps, which involve unzipping the theme, changing names of files and directories and doing a _find and replace_ for the word "hydrogen" written in few combinations of uppercase and lowercase letters. 
+
+I thought that the whole process could be easily automated with a simple Python script that would repack the theme on the fly while doing all the necessary string substitutions in file contents as well as in the paths. 
+
+The script is available [here on Github](https://github.com/kmbt/hydrogen-renamer). I hope that it will be useful for people willing to develop themes using Gantry 5 framework.
