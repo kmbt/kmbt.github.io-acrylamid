@@ -1,0 +1,61 @@
+---
+title: BuiltWith lookup script
+date: 2015-12-11
+tags: [builtwith, python, lxml, web scraping]
+filters: [rst]
+---
+
+`BuiltWith <http://builtwith.com>`_ is a web service that lets you check what web technologies are used on a given website. This simple script lets you do that directly from command line.
+
+
+.. code-block:: raw
+
+	#!/usr/bin/env python
+
+	import urlparse
+	import sys
+	import requests
+
+	import lxml
+	from lxml import etree
+	from cStringIO import StringIO
+
+	if __name__ == "__main__":
+		domain = sys.argv[1]
+		base_url = "http://builtwith.com/"
+		url = urlparse.urljoin(base_url, domain)
+		print "Visiting {} ...\n".format(url)
+		response = requests.get(url)
+
+		parser = etree.HTMLParser()
+		tree = etree.parse(StringIO(response.content), parser)
+
+		tech_items = tree.xpath("//div[contains(@class, 'techItem')]//h3")
+		for item in tech_items:
+			print "".join(item.itertext()).strip()
+
+After placing it in a executable file named builtwith in your $PATH, you can
+use it like so:
+
+.. code-block:: raw
+	
+	$ builtwith 37signals.com
+	Visiting http://builtwith.com/37signals.com ...
+
+	GeoTrust SSL
+	RapidSSL
+	Dyn DNS
+	Google Apps for Business
+	Postmark
+	Campaign Monitor
+	DKIM
+	SPF
+	Shockwave Flash Embed
+	Google Conversion Tracking
+	Clicky
+	html5shiv
+	Prototype
+	YouTube
+	Amazon S3
+	IPhone / Mobile Compatible
+	Device Width
