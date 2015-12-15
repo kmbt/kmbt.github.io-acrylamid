@@ -12,8 +12,10 @@ push:
 	git add .
 	cd output && git add .
 	@read -p "Enter commit message:" commit_message; \
-	git commit -am $commit_message
+	git commit -am $commit_message; \
 	cd output && git commit -am $commit_message
+	git push
+	cd output && git push
 
 
 clean:
