@@ -2,6 +2,20 @@
 serve:
 	acrylamid autocompile
 
+.PHONY: pull
+pull:
+	git pull
+	cd output && git pull
+
+.PHONY: push
+push:
+	git add .
+	cd output && git add .
+	@read -p "Enter commit message:" commit_message; \
+	git commit -am $commit_message
+	cd output && git commit -am $commit_message
+
+
 clean:
 	rm -rf output/*
 	rm -rf .cache

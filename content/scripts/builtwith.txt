@@ -2,13 +2,10 @@
 title: BuiltWith lookup script
 date: 2015-12-11
 tags: [builtwith, python, lxml, web scraping]
-filters: [rst]
 ---
 
-`BuiltWith <http://builtwith.com>`_ is a web service that lets you check what web technologies are used on a given website. This simple script lets you do that directly from command line.
+[BuiltWith](http://builtwith.com) is a web service that lets you check what web technologies are used on a given website. This simple script lets you do that directly from command line.
 
-
-.. code-block:: raw
 
 	#!/usr/bin/env python
 
@@ -34,11 +31,9 @@ filters: [rst]
 		for item in tech_items:
 			print "".join(item.itertext()).strip()
 
-After placing it in a executable file named builtwith in your $PATH, you can
+After placing it in a executable file named builtwith in your `$PATH`, you can
 use it like so:
 
-.. code-block:: raw
-	
 	$ builtwith 37signals.com
 	Visiting http://builtwith.com/37signals.com ...
 

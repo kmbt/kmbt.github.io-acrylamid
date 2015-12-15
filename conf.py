@@ -52,3 +52,5 @@ VIEWS = {
 THEME = 'theme2'
 ENGINE = 'acrylamid.templates.jinja2.Environment'
 DATE_FORMAT = '%Y-%d-%m, %H:%M'
+
+# SUMMARIZE_MODE = 1
