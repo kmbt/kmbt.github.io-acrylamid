@@ -1,0 +1,25 @@
+---
+title: Remove all .pyc files from a git repository
+date: 2015-16-12, 10:30
+tags: [python, git, find, shell-fu]
+---
+
+When working on Python project you may sometimes forget to `.gitignore` your
+`*.pyc` files and end up having them tracked by the repo.
+
+To fix this you need use `git rm`:
+
+```
+find . -name "*.pyc" -exec git rm -f {} \;
+```
+
+Then, add a line:
+
+```
+*.pyc
+```
+
+to the `.gitignore` file in the repository root to have them permanently
+ignored.
+
+Credit goes to [Yuji](https://yuji.wordpress.com/2010/10/29/git-remove-all-pyc/).
