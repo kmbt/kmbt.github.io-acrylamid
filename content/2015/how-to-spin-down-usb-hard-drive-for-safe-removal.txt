@@ -18,6 +18,8 @@ and then spin the disk down with:
 udisks --detach /dev/sdc
 ```
 
+You should the notice (usually, hear) the disk spin down.
+
 Please note, that we are referring here to the device `sdc` not its partition 
 `sdc1`.
 
