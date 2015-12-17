@@ -1,0 +1,26 @@
+---
+title: How to spin down USB hard drive for safe removal
+date: 2015-17-12, 08:26
+tags: [linux, debian, shell-fu, usb, disks]
+---
+
+Let's assume you are running a Debian-based system and have a hard drive at `/dev/sdc` with a partition `/dev/sdc1`
+mounted. To safely remove the hard drive, first you need to unmount all its
+partitions. In this case you may do:
+
+```
+udisks --umount /dev/sdc1
+```
+
+and then spin the disk down with:
+
+```
+udisks --detach /dev/sdc
+```
+
+Please note, that we are referring here to the device `sdc` not its partition 
+`sdc1`.
+
+Thanks, [user76204](http://askubuntu.com/a/190668).
+
+
