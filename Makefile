@@ -10,6 +10,7 @@ pull:
 
 .PHONY: deploy
 deploy: push
+	sensible-browser http://kmbt.github.io/
 
 .PHONY: push
 push:
