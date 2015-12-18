@@ -1,0 +1,14 @@
+---
+title: Enable ISO 8061 date format in Thunderbird (and the rest of userland)
+date: 2015-15-12, 12:38
+tags: [linux, debian, locale, thunderbird, iso date]
+---
+
+Just add the following line to your `/etc/environment`:
+
+```
+LC_TIME=en_DK.utf8
+```
+
+DK? [Yes](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=137870).
+

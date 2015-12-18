@@ -1,0 +1,27 @@
+---
+title: "Changing Alternatives (sensible-*) in Debian"
+date: 2015-17-12, 08:41
+tags: [linux, debian, shell-fu]
+---
+
+To change the default editor (`sensible-editor`):
+
+```
+	# update-alternatives --config editor
+```
+
+, similarly, for `sensible-browser`:
+
+```
+	# update-alternatives --config x-www-browser
+```
+
+, and for the `sensible-pager` use:
+
+
+```
+	# update-alternatives --config pager
+```
+
+Thanks, [Shell Person](http://www.shellperson.net/change-sensible-editor/).
+
