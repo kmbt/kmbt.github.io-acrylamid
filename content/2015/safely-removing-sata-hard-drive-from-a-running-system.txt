@@ -6,7 +6,9 @@ tags: [linux, sata, disks]
 
 I have a Debian-based system with a SATA controller running in AHCI mode. I sometimes need to plug and unplug a disk from an internal SATA bay. The bay is nothing fancy - you just  slide a disk cradle into it and the SATA and power sockets make contact.
 
-[Wyzard on Unix & Linux Stack Exchange](http://unix.stackexchange.com/a/43450) has an advice on how to do a proper hot unplug.
+[Wyzard](http://unix.stackexchange.com/a/43450) on Unix & Linux Stack Exchange
+has a good advice on how to do a proper hot unplug. The following is based on
+that advice:
 
 First you need to unmount the partitions. Then, deactivate any LVM groups with `vgchange -an` - I don't use LVM, so I haven't tried that. Finally, it is a very good idea to unregister device from the kernel and spin it down by 
 
