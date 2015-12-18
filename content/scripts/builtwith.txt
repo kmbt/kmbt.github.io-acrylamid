@@ -34,12 +34,12 @@ filters: [rst]
 		for item in tech_items:
 			print "".join(item.itertext()).strip()
 
-After placing it in a executable file named builtwith in your $PATH, you can
+After placing it in a executable file named builtwith-lookup in your $PATH, you can
 use it like so:
 
 .. code-block:: raw
 	
-	$ builtwith 37signals.com
+	$ builtwith-lookup 37signals.com
 	Visiting http://builtwith.com/37signals.com ...
 
 	GeoTrust SSL
