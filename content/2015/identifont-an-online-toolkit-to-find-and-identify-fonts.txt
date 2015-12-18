@@ -1,0 +1,10 @@
+---
+title: Identifont - an online toolkit to find and identify fonts
+date: 2015-17-12, 13:39
+tags: [fonts, dtp]
+---
+
+[Identifont](http://www.identifont.com) - an online font identification toolkit lets you identify fonts
+by such criteria as appearance traits, name, similarity and picture upload.
+
+I find it very useful.

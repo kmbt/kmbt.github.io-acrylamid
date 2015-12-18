@@ -1,7 +1,7 @@
 .PHONY: serve
 serve:
 	sensible-browser http://127.0.0.1:8000 &
-	acrylamid autocompile &
+	acrylamid autocompile
 
 .PHONY: pull
 pull:
