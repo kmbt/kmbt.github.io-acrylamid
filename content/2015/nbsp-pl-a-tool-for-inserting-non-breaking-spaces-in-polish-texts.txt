@@ -1,0 +1,17 @@
+---
+title: nbsp_pl - a tool for inserting non-breaking spaces in polish texts
+date: 2015-21-12, 21:35
+tags: [ktk, scripts, polish, nbsp_pl, html]
+---
+
+In polish typography there is a rule that tells you to insert a non-breaking space after one-letter words such as "a", "i", "o", "u", "w", "z". It is also not uncommon to insert non-breaking spaces after numbers or between digits if the digits are to be separated by a space. I have written a script to do just that, and a little more.
+
+It is called `nbsp_pl`, and you can find it the [ktk](https://github.com/kmbt/ktk).
+
+The script accepts input file names as parameters. In case of no file names given, it just reads from standard input until EOF. On standard output it writes result of processing which takes place in the following stages:
+
+1. Removal of repeated spaces
+2. Adding non-breaking spaces after words belonging to a hard-coded list
+3. Adding non-breaking spaces after numbers
+
+The scripts works properly only in utf-8 encoding. As a symbol for a non-breaking space it inserts an HTML entity of `&nbsp;`.
